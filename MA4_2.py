@@ -23,6 +23,10 @@ def main():
 	f.set(7)
 	print(f.get())
 
+	f = Person(5)
+	print(f.fib())
+
+
 def runner_py(n):
 	for _ in range()
 
