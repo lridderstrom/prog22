@@ -94,9 +94,14 @@ def main():
 	# plt.ylabel('Time (s)')
 	# plt.legend(loc = 'upper left')
 	# plt.savefig('fib_py_2030.png')	
+
+	f = Person(8)
+	print(f.fibc())
+
 	
 	f = Person(47)
 	print(f'Time for c++ when n is 47: {f.fibc()}')
+	
 
 if __name__ == '__main__':
 
