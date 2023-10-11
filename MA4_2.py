@@ -23,14 +23,6 @@ def main():
 	f.set(7)
 	print(f.get())
 
-	for x in range(30, 45):
-		f = Person(x)
-		print(f.fib())
-
-
-
-
-
 
 if __name__ == '__main__':
 	for i in range(30, 45):
@@ -45,7 +37,8 @@ if __name__ == '__main__':
 		print(f'Numba took {round(end-start, 2)} seconds ')
 
 		start = pc()
-		Person.fib()
+		f = Person(i)
+		f.fibc()
 		end = pc()
 		print(f'C++ took {round(end-start, 2)} seconds ')
 

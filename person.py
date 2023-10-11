@@ -20,7 +20,7 @@ class Person(object):
 	def set(self, age):
 		lib.Person_set(self.obj, age)
 
-	def fib(self):
+	def fibc(self):
 		lib.Person_fib(self.obj)
         
 	def __del__(self):
