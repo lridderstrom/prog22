@@ -67,35 +67,36 @@ def main():
 	# plt.legend(loc = 'upper left')
 	# plt.savefig('fib_py_3045.png')
 
-	fibnumba2030 = [i for i in range(20,30)]
-	fibnumbatime2030 = []
-	for n in fibnumba2030:
-		start = pc()
-		fib_numba(n)
-		end = pc()
-		fibnumbatime2030.append(end-start)
+	# fibnumba2030 = [i for i in range(20,30)]
+	# fibnumbatime2030 = []
+	# for n in fibnumba2030:
+	# 	start = pc()
+	# 	fib_numba(n)
+	# 	end = pc()
+	# 	fibnumbatime2030.append(end-start)
 	
-	plt.plot(fibnumba2030, fibnumbatime2030, label = 'Time for numba')
-	plt.xlabel('Fibonacci number (n)')
-	plt.ylabel('Time (s)')
-	plt.legend(loc = 'upper left')
-	plt.savefig('fib_numba_2030.png')
+	# plt.plot(fibnumba2030, fibnumbatime2030, label = 'Time for numba')
+	# plt.xlabel('Fibonacci number (n)')
+	# plt.ylabel('Time (s)')
+	# plt.legend(loc = 'upper left')
+	# plt.savefig('fib_numba_2030.png')
 
-	fibpy2030 = [i for i in range(20,30)] #40 since 45 is too big 
-	fibpytime2030 = []
-	for n in fibpy2030:
-		start = pc()
-		fib_py(n)
-		end = pc()
-		fibpytime2030.append(end-start)	
+	# fibpy2030 = [i for i in range(20,30)] #40 since 45 is too big 
+	# fibpytime2030 = []
+	# for n in fibpy2030:
+	# 	start = pc()
+	# 	fib_py(n)
+	# 	end = pc()
+	# 	fibpytime2030.append(end-start)	
 
-	plt.plot(fibpy2030, fibpytime2030, label = "Time for python")
-	plt.xlabel('Fibonacci number (n)')
-	plt.ylabel('Time (s)')
-	plt.legend(loc = 'upper left')
-	plt.savefig('fib_py_2030.png')	#dkjglj
-
-	print(f'Time for c++ when n is 47: {Person(47).fibc()}')
+	# plt.plot(fibpy2030, fibpytime2030, label = "Time for python")
+	# plt.xlabel('Fibonacci number (n)')
+	# plt.ylabel('Time (s)')
+	# plt.legend(loc = 'upper left')
+	# plt.savefig('fib_py_2030.png')	
+	
+	f = Person(47)
+	print(f'Time for c++ when n is 47: {f.fibc()}')
 
 if __name__ == '__main__':
 
