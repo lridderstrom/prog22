@@ -24,7 +24,7 @@ def main():
 	# f.set(7)
 	# print(f.get())
 
-	fibnumba3045 = [i for i in range(10,20)]
+	fibnumba3045 = [i for i in range(30,45)]
 	fibnumbatime3045 = []
 	for n in fibnumba3045:
 		start = pc()
@@ -33,8 +33,12 @@ def main():
 		fibnumbatime3045.append(end-start)
 	
 	plt.plot(fibnumba3045, fibnumbatime3045, label = 'Time for numba')
+	plt.xlabel('Fibonacci number')
+	plt.ylabel('Time (s)')
+	plt.legend(loc = 'upper left')
+	plt.savefig('fib_numba_3045.png')
 		
-	fibc3045 = [i for i in range(10,20)]
+	fibc3045 = [i for i in range(30,45)]
 	fibctime3045 = []
 	for n in fibc3045:
 		start = pc()
@@ -44,8 +48,12 @@ def main():
 		fibctime3045.append(end-start)
 
 	plt.plot(fibc3045, fibctime3045, label = 'Time for c++')
-
-	fibpy3045 = [i for i in range(10,20)] #40 since 45 is too big 
+	plt.xlabel('Fibonacci number')
+	plt.ylabel('Time (s)')
+	plt.legend(loc = 'upper left')
+	plt.savefig('fib_c++_3045.png')
+	
+	fibpy3045 = [i for i in range(30,40)] #40 since 45 is too big 
 	fibpytime3045 = []
 	for n in fibpy3045:
 		start = pc()
@@ -54,7 +62,10 @@ def main():
 		fibpytime3045.append(end-start)	
 
 	plt.plot(fibpy3045, fibpytime3045, label = "Time for python")
-
+	plt.xlabel('Fibonacci number')
+	plt.ylabel('Time (s)')
+	plt.legend(loc = 'upper left')
+	plt.savefig('fib_py_3045.png')
 
 if __name__ == '__main__':
 
