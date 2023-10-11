@@ -2,7 +2,8 @@
 
 from person import Person
 from  numba import njit
-import time 
+from time import perf_counter as pc
+from time import sleep as pause 
 
 def fib_py(n):
 	if n <= 1:
@@ -27,9 +28,27 @@ def main():
 	print(f.fib())
 
 
-def runner_py(n):
-	for _ in range()
+
+
 
 
 if __name__ == '__main__':
+
+	start = pc()
+	py = fib_py()
+	end = pc()
+
+	start = pc()
+	numba = fib_numba()
+	end = pc()
+
+	start = pc()
+	c = Person.fib()
+	end = pc()
+
+	print(py)
+	print(numba)
+	print(c)
+
 	main()
+
