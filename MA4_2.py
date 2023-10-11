@@ -3,6 +3,7 @@
 from person import Person
 from  numba import njit
 from time import perf_counter as pc 
+import matplotlib.pyplot as plt
 
 def fib_py(n):
 	if n <= 1:
@@ -25,22 +26,37 @@ def main():
 
 
 if __name__ == '__main__':
-	for i in range(30, 45):
+	
+	fibpy3045 = [i for i in range(30,40)] #40 since 45 is too big 
+	fibpytime3045 = []
+	for n in fibpy3045:
 		start = pc()
-		fib_py(i)
+		fib_py(n)
 		end = pc()
-		print(f'Python took {round(end-start, 2)} seconds ')
+		fibpytime3045.append(end-start)	
 
+	plt.plot(fibpy3045, fibpytime3045, label = "Time for python")
+
+	fibnumba3045 = [i for i in range(30,45)]
+	fibnumbatime3045 = []
+	for n in fibnumba3045:
 		start = pc()
-		fib_numba(i)
+		fib_numba(n)
 		end = pc()
-		print(f'Numba took {round(end-start, 2)} seconds ')
-
+		fibnumbatime3045.append(end-start)
+	
+	plt.plot(fibnumba3045, fibnumbatime3045, label = 'Time for numba')
+		
+	fibc3045 = [i for i in range(30,45)]
+	fibctime3045 = []
+	for n in fibc3045:
 		start = pc()
-		f = Person(i)
+		f = Person(n)
 		f.fibc()
 		end = pc()
-		print(f'C++ took {round(end-start, 2)} seconds ')
+		fibctime3045.append(end-start)
 
+	plt.plot(fibc3045, fibctime3045, label = 'Time for c++')
+	
 	main()
 
