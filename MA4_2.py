@@ -19,13 +19,10 @@ def fib_numba(n):
 		return(fib_numba(n-1) + fib_numba(n-2))
 
 def main():
-	f = Person(5)
-	print(f.get())
-	f.set(7)
-	print(f.get())
-
-
-if __name__ == '__main__':
+	# f = Person(5)
+	# print(f.get())
+	# f.set(7)
+	# print(f.get())
 
 	fibnumba3045 = [i for i in range(10,20)]
 	fibnumbatime3045 = []
@@ -57,6 +54,9 @@ if __name__ == '__main__':
 		fibpytime3045.append(end-start)	
 
 	plt.plot(fibpy3045, fibpytime3045, label = "Time for python")
+
+
+if __name__ == '__main__':
 
 	main()
 
