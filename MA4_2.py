@@ -38,20 +38,20 @@ def main():
 	# plt.legend(loc = 'upper left')
 	# plt.savefig('fib_numba_3045.png')
 		
-	# fibc3045 = [i for i in range(30,45)]
-	# fibctime3045 = []
-	# for n in fibc3045:
-	# 	start = pc()
-	# 	f = Person(n)
-	# 	f.fibc()
-	# 	end = pc()
-	# 	fibctime3045.append(end-start)
+	fibc3045 = [i for i in range(30,45)]
+	fibctime3045 = []
+	for n in fibc3045:
+		start = pc()
+		f = Person(n)
+		f.fibc()
+		end = pc()
+		fibctime3045.append(end-start)
 
-	# plt.plot(fibc3045, fibctime3045, label = 'Time for c++')
-	# plt.xlabel('Fibonacci number')
-	# plt.ylabel('Time (s)')
-	# plt.legend(loc = 'upper left')
-	# plt.savefig('fib_c++_3045.png')
+	plt.plot(fibc3045, fibctime3045, label = 'Time for c++')
+	plt.xlabel('Fibonacci number')
+	plt.ylabel('Time (s)')
+	plt.legend(loc = 'upper left')
+	plt.savefig('fib_c++_3045.png')
 	
 	# fibpy3045 = [i for i in range(30,40)] #40 since 45 is too big 
 	# fibpytime3045 = []
