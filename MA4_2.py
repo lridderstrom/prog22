@@ -93,7 +93,7 @@ def main():
 	plt.xlabel('Fibonacci number (n)')
 	plt.ylabel('Time (s)')
 	plt.legend(loc = 'upper left')
-	plt.savefig('fib_py_2030.png')	
+	plt.savefig('fib_py_2030.png')	#dkjglj
 
 	print(f'Time for c++ when n is 47: {Person(47).fibc()}')
 
