@@ -33,22 +33,21 @@ def main():
 
 
 if __name__ == '__main__':
+	for i in range(30, 45):
+		start = pc()
+		fib_py(i)
+		end = pc()
+		print(f'Python took {round(end-start, 2)} seconds ')
 
-	start = pc()
-	py = fib_py()
-	end = pc()
+		start = pc()
+		fib_numba(i)
+		end = pc()
+		print(f'Numba took {round(end-start, 2)} seconds ')
 
-	start = pc()
-	numba = fib_numba()
-	end = pc()
-
-	start = pc()
-	c = Person.fib()
-	end = pc()
-
-	print(py)
-	print(numba)
-	print(c)
+		start = pc()
+		Person.fib(i)
+		end = pc()
+		print(f'C++ took {round(end-start, 2)} seconds ')
 
 	main()
 
