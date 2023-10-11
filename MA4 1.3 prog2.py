@@ -34,3 +34,5 @@ if __name__ == "__main__":
         results = ex.map(hypersphere, [(1000000, 11) for _ in range(10)]) #does it ten times 
     end = pc()
     print(f"Process took {round(end-start, 2)} seconds")
+
+    #Multiprocessing is faster since it uses the computers cores at the same time
