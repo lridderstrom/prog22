@@ -23,11 +23,11 @@ int Person::get(){
 void Person::set(int n){
 	age = n;
 	}
-
+"global function"
 long Person::fib(){
 	return fibi(age);
 }
-
+"private function"
 long Person::fibi(int n){
 		if (n <= 1)
 			return n;

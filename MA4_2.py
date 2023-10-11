@@ -5,12 +5,14 @@ from  numba import njit
 from time import perf_counter as pc 
 import matplotlib.pyplot as plt
 
+#creates function to calculate fib with only python
 def fib_py(n):
 	if n <= 1:
 		return n
 	else:
 		return(fib_py(n-1) + fib_py(n-2))
-	
+
+#creates function to calculate fib with numba. It translates the python code to c++ since it's faster	
 @njit
 def fib_numba(n):
 	if n <= 1:
@@ -19,19 +21,20 @@ def fib_numba(n):
 		return(fib_numba(n-1) + fib_numba(n-2))
 
 def main():
-	f = Person(5)
-	print(f.get())
-	f.set(7)
-	print(f.get())
+	# f = Person(5)
+	# print(f.get())
+	# f.set(7)
+	# print(f.get())
 
-	fibnumba3045 = [i for i in range(30,45)]
-	fibnumbatime3045 = []
-	for n in fibnumba3045:
-		start = pc()
-		fib_numba(n)
-		end = pc()
-		fibnumbatime3045.append(end-start)
+	fibnumba3045 = [i for i in range(30,45)] #uses list comprehension to create list with numbers between 30 and 45
+	fibnumbatime3045 = [] #creates empty list
+	for n in fibnumba3045: #for each number in the list, measures the time
+		start = pc() #starts timer
+		fib_numba(n) 
+		end = pc() #ends timer
+		fibnumbatime3045.append(end-start) #adds the data to list
 	
+	#plots the figure
 	plt.plot(fibnumba3045, fibnumbatime3045, label = 'Time for numba')
 	plt.xlabel('Fibonacci number')
 	plt.ylabel('Time (s)')
@@ -95,12 +98,8 @@ def main():
 	plt.legend(loc = 'upper left')
 	plt.savefig('fib_py_2030.png')	
 
-	f = Person(8)
-	print(f.fibc())
-
-	
 	f = Person(47)
-	print(f'Fibonacci when n is 47: {f.fibc()}')
+	print(f'Fibonacci when n is 47 with c++: {f.fibc()}')
 	#It was 2971215073
 	
 	print(f'Fibonacci of 47 with numba: {fib_numba(47)}')
