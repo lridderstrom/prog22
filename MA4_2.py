@@ -4,25 +4,18 @@ from person import Person
 from  numba import njit
 from time import perf_counter as pc 
 
-@njit
-def fib_numba(n):
-	if n <= 1:
-		return n
-	else:
-		return(fib_py(n-1) + fib_py(n-2))
-
 def fib_py(n):
 	if n <= 1:
 		return n
 	else:
 		return(fib_py(n-1) + fib_py(n-2))
 	
-# @njit
-# def fib_numba(n):
-# 	if n <= 1:
-# 		return n
-# 	else:
-# 		return(fib_py(n-1) + fib_py(n-2))
+@njit
+def fib_numba(n):
+	if n <= 1:
+		return n
+	else:
+		return(fib_numba(n-1) + fib_numba(n-2))
 
 def main():
 	f = Person(5)
