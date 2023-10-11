@@ -26,16 +26,6 @@ def main():
 
 
 if __name__ == '__main__':
-	
-	fibpy3045 = [i for i in range(30,40)] #40 since 45 is too big 
-	fibpytime3045 = []
-	for n in fibpy3045:
-		start = pc()
-		fib_py(n)
-		end = pc()
-		fibpytime3045.append(end-start)	
-
-	plt.plot(fibpy3045, fibpytime3045, label = "Time for python")
 
 	fibnumba3045 = [i for i in range(30,45)]
 	fibnumbatime3045 = []
@@ -57,6 +47,16 @@ if __name__ == '__main__':
 		fibctime3045.append(end-start)
 
 	plt.plot(fibc3045, fibctime3045, label = 'Time for c++')
-	
+
+	fibpy3045 = [i for i in range(30,40)] #40 since 45 is too big 
+	fibpytime3045 = []
+	for n in fibpy3045:
+		start = pc()
+		fib_py(n)
+		end = pc()
+		fibpytime3045.append(end-start)	
+
+	plt.plot(fibpy3045, fibpytime3045, label = "Time for python")
+
 	main()
 
