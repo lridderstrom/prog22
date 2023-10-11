@@ -18,7 +18,7 @@ def hypersphere(n, d):
 
 #creates function that calls on hypersphere and calculates volume
 def runner():
-    hypersphere(10000000, 11) #ska va 10 milj
+    hypersphere(100000, 11) #ska va 10 milj
 
 
 if __name__ == "__main__":
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     #Measures time for how long it takes to calculate with multiprocessing
     start = pc()
     with futures.ProcessPoolExecutor() as ex: #with parallell    
-        results = ex.map(hypersphere, [(1000000, 11) for _ in range(10)]) #does it ten times 
+        results = ex.map(hypersphere, [(10000, 11) for _ in range(10)]) #does it ten times 
     end = pc()
     print(f"Process took {round(end-start, 2)} seconds")
 
