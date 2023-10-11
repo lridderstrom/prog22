@@ -1,3 +1,5 @@
+"presented for Stephan Spengler"
+
 from time import perf_counter as pc
 import concurrent.futures as futures
 import random
