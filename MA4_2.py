@@ -23,8 +23,9 @@ def main():
 	f.set(7)
 	print(f.get())
 
-	f = Person(5)
-	print(f.fib())
+	for x in range(30, 45):
+		f = Person(x)
+		print(f.fib())
 
 
 
@@ -44,7 +45,7 @@ if __name__ == '__main__':
 		print(f'Numba took {round(end-start, 2)} seconds ')
 
 		start = pc()
-		Person.fib(i)
+		Person.fib()
 		end = pc()
 		print(f'C++ took {round(end-start, 2)} seconds ')
 
